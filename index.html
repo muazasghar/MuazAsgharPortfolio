@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Muaz's Portfolio</title>
+<meta name="description" content="Portfolio of Muaz, a Frontend Web Developer specializing in modern, high-performance web applications.">
+
+<!-- Fonts: Inter (Modern, Clean) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Icons: Phosphor Icons (load only used weights) -->
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
+
+<script>
+(function() {
+  const theme = 'dark';
+  try {
+    window.localStorage.setItem('theme', theme);
+  } catch (error) {
+    // Ignore storage issues in restricted environments.
+  }
+  document.documentElement.setAttribute('data-theme', theme);
+})();
+</script>
+
+<link rel="preload" href="style.css" as="style">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-primary text-slate-300 font-sans antialiased">
+
+<!-- Background Ambient Glow -->
+<div class="bg-glow-layer fixed inset-0 pointer-events-none overflow-hidden">
+  <div class="bg-orb orb-one"></div>
+  <div class="bg-orb orb-two"></div>
+  <div class="bg-orb orb-three"></div>
+</div>
+
+<!-- Navigation -->
+<header id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 pt-4">
+  <a href="#hero" class="nav-brand" aria-label="Muaz home">
+    <span class="brand-mark" aria-hidden="true">
+      <span class="brand-mark-inner"></span>
+    </span>
+    <span class="brand-text">muaz.dev</span>
+  </a>
+
+  <div class="nav-shell max-w-5xl mx-auto px-4">
+    <!-- Desktop Menu -->
+    <nav id="desktop-nav" class="hidden md:flex items-center justify-center gap-8 w-full">
+      <a href="#about" class="nav-link text-sm font-medium hover:text-white transition-colors">About</a>
+      <a href="#projects" class="nav-link text-sm font-medium hover:text-white transition-colors">Projects</a>
+      <a href="#contact" class="nav-link text-sm font-medium hover:text-white transition-colors">Contact</a>
+    </nav>
+
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-btn" class="md:hidden text-2xl text-white focus:outline-none z-50 relative">
+      <span id="menu-icon">☰</span>
+    </button>
+  </div>
+
+  <!-- Mobile Dropdown Menu -->
+  <nav id="mobile-menu" class="md:hidden flex flex-col gap-4 px-6 overflow-hidden max-h-0 opacity-0 transform -translate-y-2 transition-all duration-300">
+    <a href="#about" class="text-base font-medium hover:text-accent transition-colors">About</a>
+    <a href="#projects" class="text-base font-medium hover:text-accent transition-colors">Projects</a>
+    <a href="#contact" class="text-base font-medium hover:text-accent transition-colors">Contact</a>
+  </nav>
+</header>
+
+<main>
+<!-- Hero Section -->
+<section id="hero" class="min-h-screen relative pt-24">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="hero-layout hero-layout-single">
+      <div class="hero-copy hero-copy-compact">
+        <h1 class="hero-title animate-fade-up" style="animation-delay: 100ms;">
+          <span class="block">Hi, I'm Muaz.</span>
+          <span class="block">I design and develop modern, responsive web experiences.</span>
+          <span class="block availability-line">Available for Freelance & Full-time.</span>
+        </h1>
+      </div>
+
+      <aside class="hero-stats-card fade-in-section" aria-label="Profile summary card">
+        <div class="stats-header">
+          <span class="stats-badge">Profile</span>
+          <i class="ph-fill ph-stars"></i>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-value">02+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-value">09</span>
+            <span class="stat-label">Projects</span>
+          </div>
+        </div>
+
+        <div class="skills-row" aria-label="Technology stack">
+          <div class="skill-item">
+            <span class="skill-badge" title="HTML5">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1.4 0h21.2l-1.9 21.5L12 24l-8.7-2.5L1.4 0zm15.6 5.1l-.3 3.4h-6.9l.2 2.8h6.4l-.4 4.1-3.3 1-3.3-1-.2-2.3h-2.9l.4 4.7 6.1 1.8 6.1-1.8.8-8.5H8.6l-.2-2.8h9.6l.1-1.5z" fill="#E34F26"/></svg>
+            </span>
+            <small>HTML</small>
+          </div>
+          <div class="skill-item">
+            <span class="skill-badge" title="CSS3">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M1.5 0h21l-1.9 21.5L12 24l-8.6-2.5L1.5 0zm15.7 4.4H7l.2 2.8h9.1l-.3 3.5-2.8 1.1-2.8-1.1-.2-2.2h-2.7l.3 4.6 5.3 1.9 5.3-1.9.8-8.8H7.1l.1-2.8h10.1l.1-1.1z" fill="#1572B6"/></svg>
+            </span>
+            <small>CSS</small>
+          </div>
+          <div class="skill-item">
+            <span class="skill-badge" title="JavaScript">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M0 0h24v24H0V0zm12 7.6l-1.5 1.8h2.9L12 7.6zm-4.1 2.7l-1.3 1.8h4.1l.7 2.2-2 1.1-2-1.1.6-1.6H4.7l-1 3.1 4.3 2.4 4.2-2.4.9-5.2H7.9zm10.1 0l-1.7 1.8h2.5l-1.1 5.7-4.1 2.4-3.9-2.1.7-1.5h1.8l-.3 1.1 2.7 1.4 2.6-1.4.7-4.4h-5.1l-.6-1.7h6.3z" fill="#F7DF1E"/></svg>
+            </span>
+            <small>JS</small>
+          </div>
+          <div class="skill-item">
+            <span class="skill-badge" title="React">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><g transform="translate(2.2 2.2) scale(0.82)"><path d="M12 1.8c-2.5 0-4.7 1.3-6.1 3.3 1.1.7 2.3 1.1 3.6 1.2.9.1 1.9.1 2.9 0 1.1-.1 2.2-.4 3.3-1 1.3-1.1 2.3-2.7 2.8-4.1C15.6 2.5 14.1 1.8 12 1.8zm-7.2 7c-1.3 2.1-1.4 4.7-.4 7.1 1.2-1.5 2.8-2.5 4.7-3 .7-.2 1.4-.3 2-.3 1.2 0 2.4.3 3.5.9 1.1.6 2.1 1.7 2.9 3 1.3-2.4 1.3-5.2-.1-7.3C17.7 7.9 15.2 7 12 7s-5.6.9-7.2 1.8zm8.1 9.5c-1.8.1-3.6.7-5.1 1.9-1.4 1.1-2.5 2.7-3.1 4.6 1.9 1.3 4.2 2 6.8 2 2.7 0 5.1-.9 6.9-2.5-.5-1.8-1.6-3.4-3.1-4.6-1.2-.9-2.7-1.4-4.4-1.4zm-8.2 5.2c.5-1.3 1.5-2.4 2.9-3.2 1.2-.7 2.5-1.1 3.9-1.2-1.6 1.8-2.7 3.8-3.1 6.3-.3-.1-.6-.3-.8-.5-.7-.6-1.2-1.1-2.9-1.4zm12.8 1.6c-1.4.8-3 .9-4.5.3 1.5-2.4 2.8-4.6 3-7 .5 1.8 1.7 3.3 3.4 4.3.5.3.9.6 1.1.8-1 .9-1.9 1.3-3 1.6zm-9.8-8.7c-.8 0-1.6.2-2.3.5-1.1.5-2.1 1.5-2.9 2.7.7-.1 1.4-.1 2.2-.1 1.2 0 2.4.2 3.6.6 1.1.4 2.2 1.2 3 2.1.6-.8 1-1.8 1.1-2.8-.9-.8-2.1-1.3-3.7-1.3zm9.2 3.5c-1 0-1.8.3-2.6.8-.7.5-1.3 1.2-1.7 2 1.4-.2 2.7-.1 3.9.5 1.2.6 2.1 1.6 2.8 2.8.7-1.1 1-2.4 1-3.8-.1-1.1-.5-2-1.4-2.9-.5-.5-1.2-.8-1.9-.8zm-9.8 6.7c-1 .8-1.9 1.9-2.5 3.2-1.3-1.1-2.1-2.6-2.4-4.3 1.1-.5 2.3-.7 3.6-.7 1.1 0 2.1.2 3 .6.3.1.6.3.9.5-.4.6-.8 1.1-1.3 1.7zm9.5 1.2c.9-.5 1.7-1.2 2.2-2.1.8 1.2 1.2 2.7 1.2 4.3-2.2-.1-4.3-.6-5.9-1.7.7-.8 1.4-1.4 2.5-1.8zm-10.5-4.4c-.7-.7-1.4-1.2-2.2-1.7.4-1.1 1-2.1 1.7-2.9.7.8 1.5 1.4 2.3 1.7-.3 1-.5 1.9-.8 2.9zm9.7.2c-1.4 0-2.7.5-3.8 1.4-1 1-1.7 2.2-2.1 3.6 1.1.7 2.3 1.1 3.6 1.1 1.4 0 2.7-.4 3.8-1.2 1.1-.8 1.9-1.8 2.2-3-.9-.8-2.1-1.5-3.7-1.9z" fill="#61DAFB"/></g></svg>
+            </span>
+            <small>React</small>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-24 md:py-32 relative">
+<div class="max-w-7xl mx-auto px-6">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row items-start justify-between gap-12 mb-20 fade-in-section">
+<div class="max-w-2xl">
+<h2 class="text-sm font-bold text-accent tracking-widest uppercase mb-3">About Me</h2>
+<h3 class="text-3xl md:text-4xl font-bold text-white mb-6">Bridging the gap between design and engineering.</h3>
+<div class="space-y-4 text-slate-400 leading-relaxed text-lg">
+<p>
+I am an enthusiastic frontend developer with a passion for building consistent, aesthetic, and user-friendly web applications.
+I thrive on turning complex problems into simple, beautiful, and intuitive designs.
+</p>
+<p>
+With a strong foundation in modern web technologies, I focus on writing clean, elegant, and efficient code.
+My work is driven by a desire to create high-quality digital experiences that leave a lasting impression.
+</p>
+</div>
+</div>
+
+<!-- Tech Stack / Stats or Visual -->
+<div class="w-full md:w-auto grid grid-cols-2 gap-4">
+<div class="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-accent/30 transition-colors group">
+<i class="ph-duotone ph-code text-3xl text-accent mb-3 group-hover:scale-110 transition-transform"></i>
+<div class="font-bold text-white text-xl">Clean Code</div>
+<div class="text-sm text-slate-500">Maintainable & Scalable</div>
+</div>
+<div class="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-accent/30 transition-colors group">
+<i class="ph-duotone ph-paint-brush text-3xl text-accent mb-3 group-hover:scale-110 transition-transform"></i>
+<div class="font-bold text-white text-xl">Pixel Perfect</div>
+<div class="text-sm text-slate-500">Attention to Detail</div>
+</div>
+<div class="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-accent/30 transition-colors group">
+<i class="ph-duotone ph-lightning text-3xl text-accent mb-3 group-hover:scale-110 transition-transform"></i>
+<div class="font-bold text-white text-xl">Fast</div>
+<div class="text-sm text-slate-500">Optimized Performance</div>
+</div>
+<div class="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-accent/30 transition-colors group">
+<i class="ph-duotone ph-device-mobile text-3xl text-accent mb-3 group-hover:scale-110 transition-transform"></i>
+<div class="font-bold text-white text-xl">Responsive</div>
+<div class="text-sm text-slate-500">Mobile First Approach</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="py-24 bg-secondary/30 relative border-y border-white/5">
+<div class="max-w-7xl mx-auto px-6">
+<div class="mb-16 fade-in-section">
+<h2 class="text-sm font-bold text-accent tracking-widest uppercase mb-3">Projects</h2>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project Card: MunchBox -->
+<article class="group relative bg-[#131B2C] border border-white/5 rounded-2xl overflow-hidden hover:border-accent/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl fade-in-section">
+<div class="h-48 bg-gradient-to-br from-amber-500/20 to-orange-500/20 group-hover:from-amber-500/30 group-hover:to-orange-500/30 transition-all flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-30 pattern-dots-md"></div>
+<i class="ph-duotone ph-hamburger text-6xl text-accent group-hover:text-white group-hover:scale-110 transition-all duration-500"></i>
+</div>
+<div class="p-8">
+<h4 class="text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">MunchBox</h4>
+<p class="text-slate-400 text-sm mb-6 leading-relaxed">Fast food delivery site with menu browsing, cart management, and checkout for takeaway and delivery orders.</p>
+<div class="flex items-center justify-between">
+<div class="flex gap-2">
+<span class="text-xs font-mono py-1 px-2 rounded bg-white/5 text-slate-400">HTML</span>
+<span class="text-xs font-mono py-1 px-2 rounded bg-white/5 text-slate-400">CSS</span>
+<span class="text-xs font-mono py-1 px-2 rounded bg-white/5 text-slate-400">JS</span>
+</div>
+<a href="https://muazasghar.github.io/MunchBox/public/index.html" class="text-sm font-semibold text-white flex items-center gap-1 hover:gap-2 transition-all">
+View Project <i class="ph-bold ph-arrow-right"></i>
+</a>
+</div>
+</div>
+</article>
+
+<!-- Project Card: Twin City Metro -->
+<article class="group relative bg-[#131B2C] border border-white/5 rounded-2xl overflow-hidden hover:border-accent/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl fade-in-section">
+<div class="h-48 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 group-hover:from-cyan-500/30 group-hover:to-blue-500/30 transition-all flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-30 pattern-lines-lg"></div>
+<i class="ph-duotone ph-train text-6xl text-accent group-hover:text-white group-hover:scale-110 transition-all duration-500"></i>
+</div>
+<div class="p-8">
+<h4 class="text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">Twin City Metro</h4>
+<p class="text-slate-400 text-sm mb-6 leading-relaxed">A modern metro system landing page with smooth animations and responsive layout. Designed to showcase transport routes and station details.</p>
+<div class="flex items-center justify-between">
+<div class="flex gap-2">
+<span class="text-xs font-mono py-1 px-2 rounded bg-white/5 text-slate-400">HTML</span>
+<span class="text-xs font-mono py-1 px-2 rounded bg-white/5 text-slate-400">CSS</span>
+<span class="text-xs font-mono py-1 px-2 rounded bg-white/5 text-slate-400">JS</span>
+</div>
+<a href="https://muazasghar.github.io/twinCityMetro/" class="text-sm font-semibold text-white flex items-center gap-1 hover:gap-2 transition-all">
+View Project <i class="ph-bold ph-arrow-right"></i>
+</a>
+</div>
+</div>
+</article>
+
+<!-- Project Card 2 -->
+<article class="group relative bg-[#131B2C] border border-white/5 rounded-2xl overflow-hidden hover:border-accent/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl fade-in-section">
+<div class="h-48 bg-gradient-to-br from-indigo-500/20 to-purple-500/20 group-hover:from-indigo-500/30 group-hover:to-purple-500/30 transition-all flex items-center justify-center relative overflow-hidden">
+<!-- Abstract geometric accent -->
+<div class="absolute inset-0 opacity-30 pattern-grid-lg"></div>
+<i class="ph-duotone ph-game-controller text-6xl text-accent group-hover:text-white group-hover:scale-110 transition-all duration-500"></i>
+</div>
+<div class="p-8">
+<h4 class="text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">Simon Game</h4>
+<p class="text-slate-400 text-sm mb-6 leading-relaxed">A classic memory game built with vanilla JavaScript. Features complex game logic, sound effects, and strict mode.</p>
+<div class="flex items-center justify-between">
+<div class="flex gap-2">
+<span class="text-xs font-mono py-1 px-2 rounded bg-white/5 text-slate-400">JS</span>
+<span class="text-xs font-mono py-1 px-2 rounded bg-white/5 text-slate-400">CSS</span>
+</div>
+<a href="https://muazasghar.github.io/SimonGame/" class="text-sm font-semibold text-white flex items-center gap-1 hover:gap-2 transition-all">
+View Project <i class="ph-bold ph-arrow-right"></i>
+</a>
+</div>
+</div>
+</article>
+
+<!-- Project Card 3 -->
+<article class="group relative bg-[#131B2C] border border-white/5 rounded-2xl overflow-hidden hover:border-accent/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl fade-in-section" style="transition-delay: 100ms;">
+<div class="h-48 bg-gradient-to-br from-pink-500/20 to-rose-500/20 group-hover:from-pink-500/30 group-hover:to-rose-500/30 transition-all flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-30 pattern-dots-md"></div>
+<i class="ph-duotone ph-music-notes text-6xl text-accent group-hover:text-white group-hover:scale-110 transition-all duration-500"></i>
+</div>
+<div class="p-8">
+<h4 class="text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">Drum Kit</h4>
+<p class="text-slate-400 text-sm mb-6 leading-relaxed">Interactive virtual drum kit. Plays specific sounds on key press or click, utilizing DOM manipulation.</p>
+<div class="flex items-center justify-between">
+<div class="flex gap-2">
+<span class="text-xs font-mono py-1 px-2 rounded bg-white/5 text-slate-400">DOM</span>
+<span class="text-xs font-mono py-1 px-2 rounded bg-white/5 text-slate-400">Audio API</span>
+</div>
+<a href="https://muazasghar.github.io/DrumKit/" class="text-sm font-semibold text-white flex items-center gap-1 hover:gap-2 transition-all">
+View Project <i class="ph-bold ph-arrow-right"></i>
+</a>
+</div>
+</div>
+</article>
+
+<!-- Project Card 3 -->
+<article class="group relative bg-[#131B2C] border border-white/5 rounded-2xl overflow-hidden hover:border-accent/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl fade-in-section" style="transition-delay: 200ms;">
+<div class="h-48 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 group-hover:from-emerald-500/30 group-hover:to-teal-500/30 transition-all flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-30 pattern-cross-sm"></div>
+<i class="ph-duotone ph-dice-five text-6xl text-accent group-hover:text-white group-hover:scale-110 transition-all duration-500"></i>
+</div>
+<div class="p-8">
+<h4 class="text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">Dice Game</h4>
+<p class="text-slate-400 text-sm mb-6 leading-relaxed">A simple two-player dice game. Demonstrates random number generation and dynamic image source manipulation.</p>
+<div class="flex items-center justify-between">
+<div class="flex gap-2">
+<span class="text-xs font-mono py-1 px-2 rounded bg-white/5 text-slate-400">JS</span>
+<span class="text-xs font-mono py-1 px-2 rounded bg-white/5 text-slate-400">Logic</span>
+</div>
+<a href="https://muazasghar.github.io/dicee_game/" class="text-sm font-semibold text-white flex items-center gap-1 hover:gap-2 transition-all">
+View Project <i class="ph-bold ph-arrow-right"></i>
+</a>
+</div>
+</div>
+</article>
+
+<!-- Project Card 4 -->
+<article class="group relative bg-[#131B2C] border border-white/5 rounded-2xl overflow-hidden hover:border-accent/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl fade-in-section">
+<div class="h-48 bg-gradient-to-br from-orange-500/20 to-red-500/20 group-hover:from-orange-500/30 group-hover:to-red-500/30 transition-all flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-30 pattern-wavy-sm"></div>
+<i class="ph-duotone ph-dog text-6xl text-accent group-hover:text-white group-hover:scale-110 transition-all duration-500"></i>
+</div>
+<div class="p-8">
+<h4 class="text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">RizzDog</h4>
+<p class="text-slate-400 text-sm mb-6 leading-relaxed">A Tinder-like landing page for dogs. Showcases responsive layout design and modern UI components using Bootstrap.</p>
+<div class="flex items-center justify-between">
+<div class="flex gap-2">
+<span class="text-xs font-mono py-1 px-2 rounded bg-white/5 text-slate-400">UI/UX</span>
+<span class="text-xs font-mono py-1 px-2 rounded bg-white/5 text-slate-400">Design</span>
+</div>
+<a href="https://muazasghar.github.io/RizzDog/" class="text-sm font-semibold text-white flex items-center gap-1 hover:gap-2 transition-all">
+View Project <i class="ph-bold ph-arrow-right"></i>
+</a>
+</div>
+</div>
+</article>
+
+<!-- Project Card 5 -->
+<article class="group relative bg-[#131B2C] border border-white/5 rounded-2xl overflow-hidden hover:border-accent/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl fade-in-section" style="transition-delay: 100ms;">
+<div class="h-48 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 group-hover:from-emerald-500/30 group-hover:to-teal-500/30 transition-all flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-30 pattern-cross-sm"></div>
+<i class="ph-duotone ph-currency-dollar text-6xl text-accent group-hover:text-white group-hover:scale-110 transition-all duration-500"></i>
+</div>
+<div class="p-8">
+<h4 class="text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">Currency Converter</h4>
+<p class="text-slate-400 text-sm mb-6 leading-relaxed">A real-time currency conversion tool built with modern JavaScript. Features live exchange rates, easy input, and responsive UI.</p>
+<div class="flex items-center justify-between">
+<div class="flex gap-2">
+<span class="text-xs font-mono py-1 px-2 rounded bg-white/5 text-slate-400">API</span>
+<span class="text-xs font-mono py-1 px-2 rounded bg-white/5 text-slate-400">JS</span>
+</div>
+<a href="https://muazasghar.github.io/CurrencyConverter/" class="text-sm font-semibold text-white flex items-center gap-1 hover:gap-2 transition-all">
+View Project <i class="ph-bold ph-arrow-right"></i>
+</a>
+</div>
+</div>
+</article>
+
+<!-- Project Card 6 -->
+<article class="group relative bg-[#131B2C] border border-white/5 rounded-2xl overflow-hidden hover:border-accent/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl fade-in-section" style="transition-delay: 100ms;">
+<div class="h-48 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 group-hover:from-cyan-500/30 group-hover:to-blue-500/30 transition-all flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-30 pattern-diagonal-lines-sm"></div>
+<i class="ph-duotone ph-truck text-6xl text-accent group-hover:text-white group-hover:scale-110 transition-all duration-500"></i>
+</div>
+<div class="p-8">
+<h4 class="text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">Move It</h4>
+<p class="text-slate-400 text-sm mb-6 leading-relaxed">Moving company landing page. Focuses on clear typography, hierarchy, and call-to-action placement.</p>
+<div class="flex items-center justify-between">
+<div class="flex gap-2">
+<span class="text-xs font-mono py-1 px-2 rounded bg-white/5 text-slate-400">HTML5</span>
+<span class="text-xs font-mono py-1 px-2 rounded bg-white/5 text-slate-400">CSS3</span>
+</div>
+<a href="https://muazasghar.github.io/MoveIt/" class="text-sm font-semibold text-white flex items-center gap-1 hover:gap-2 transition-all">
+View Project <i class="ph-bold ph-arrow-right"></i>
+</a>
+</div>
+</div>
+</article>
+
+<!-- Project Card 6 -->
+<article class="group relative bg-[#131B2C] border border-white/5 rounded-2xl overflow-hidden hover:border-accent/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl fade-in-section" style="transition-delay: 200ms;">
+<div class="h-48 bg-gradient-to-br from-yellow-500/20 to-amber-500/20 group-hover:from-yellow-500/30 group-hover:to-amber-500/30 transition-all flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-30 pattern-rect-lg"></div>
+<i class="ph-duotone ph-paint-brush-broad text-6xl text-accent group-hover:text-white group-hover:scale-110 transition-all duration-500"></i>
+</div>
+<div class="p-8">
+<h4 class="text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">Mondrian Painting</h4>
+<p class="text-slate-400 text-sm mb-6 leading-relaxed">A CSS art piece replicating a Piet Mondrian painting using CSS Grid. Demonstrates complex layout mastery.</p>
+<div class="flex items-center justify-between">
+<div class="flex gap-2">
+<span class="text-xs font-mono py-1 px-2 rounded bg-white/5 text-slate-400">Grid</span>
+<span class="text-xs font-mono py-1 px-2 rounded bg-white/5 text-slate-400">Art</span>
+</div>
+<a href="https://muazasghar.github.io/mondrian-painting/" class="text-sm font-semibold text-white flex items-center gap-1 hover:gap-2 transition-all">
+View Project <i class="ph-bold ph-arrow-right"></i>
+</a>
+</div>
+</div>
+</article>
+
+<!-- Project Card 7 -->
+<article class="group relative bg-[#131B2C] border border-white/5 rounded-2xl overflow-hidden hover:border-accent/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl fade-in-section">
+<div class="h-48 bg-gradient-to-br from-gray-500/20 to-slate-500/20 group-hover:from-gray-500/30 group-hover:to-slate-500/30 transition-all flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-30 pattern-checkerboard-sm"></div>
+<i class="ph-duotone ph-strategy text-6xl text-accent group-hover:text-white group-hover:scale-110 transition-all duration-500"></i>
+</div>
+<div class="p-8">
+<h4 class="text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">Chess Board</h4>
+<p class="text-slate-400 text-sm mb-6 leading-relaxed">A semantic HTML/CSS implementation of a chess board. Highlights structural understanding and flexbox usage.</p>
+<div class="flex items-center justify-between">
+<div class="flex gap-2">
+<span class="text-xs font-mono py-1 px-2 rounded bg-white/5 text-slate-400">Flexbox</span>
+<span class="text-xs font-mono py-1 px-2 rounded bg-white/5 text-slate-400">Structure</span>
+</div>
+<a href="https://muazasghar.github.io/chessboard/" class="text-sm font-semibold text-white flex items-center gap-1 hover:gap-2 transition-all">
+View Project <i class="ph-bold ph-arrow-right"></i>
+</a>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-24 relative">
+<!-- Background Glow -->
+<div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-accent/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+<div class="max-w-4xl mx-auto px-6 text-center">
+<div class="fade-in-section">
+<h2 class="text-sm font-bold text-accent tracking-widest uppercase mb-3">Get in Touch</h2>
+<h3 class="text-4xl md:text-5xl font-bold text-white mb-8">Ready to start your next project?</h3>
+<p class="text-slate-400 text-lg mb-12 max-w-xl mx-auto">
+Currently available for freelance projects and open to new opportunities. Let's create something amazing together.
+</p>
+
+<div class="contact-card">
+  <i class="ph-fill ph-envelope-simple"></i>
+  <span>muazasghar4@gmail.com</span>
+</div>
+
+<div class="mt-16 flex items-center justify-center gap-8">
+<a href="https://github.com/muazasghar" class="social-link">
+<i class="ph-fill ph-github-logo"></i>
+</a>
+<a href="https://www.linkedin.com/in/muaz-asghar-6a281931a/" class="social-link linkedin-link">
+<i class="ph-fill ph-linkedin-logo"></i>
+</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+
+<footer class="py-8 border-t border-white/5 bg-[#0B0F19]">
+<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+<p class="text-slate-500 text-sm">
+&copy; 2026 Muaz.dev. All rights reserved.
+</p>
+<p class="text-slate-600 text-xs">
+Designed & Built with <span class="text-accent">♥️</span> by Muaz
+</p>
+</div>
+</footer>
+
+<script src="script.js" defer></script>
+</body>
+</html>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +9,12 @@
 <!-- Fonts: Inter (Modern, Clean) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
 
-<!-- Icons: Phosphor Icons (Modern, Crisp) -->
-<script src="https://unpkg.com/@phosphor-icons/web"></script>
+<!-- Icons: Phosphor Icons (load only used weights) -->
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/duotone/style.css">
 
 <script>
 (function() {
@@ -26,6 +28,7 @@
 })();
 </script>
 
+<link rel="preload" href="style.css" as="style">
 <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-primary text-slate-300 font-sans antialiased">
@@ -93,7 +96,7 @@
             <span class="stat-label">Years Experience</span>
           </div>
           <div class="stat-item">
-            <span class="stat-value">09</span>
+            <span class="stat-value">11</span>
             <span class="stat-label">Projects</span>
           </div>
         </div>
@@ -184,7 +187,29 @@ My work is driven by a desire to create high-quality digital experiences that le
 </div>
 
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<!-- Project Card 1 -->
+<!-- Project Card: MunchBox -->
+<article class="group relative bg-[#131B2C] border border-white/5 rounded-2xl overflow-hidden hover:border-accent/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl fade-in-section">
+<div class="h-48 bg-gradient-to-br from-amber-500/20 to-orange-500/20 group-hover:from-amber-500/30 group-hover:to-orange-500/30 transition-all flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-30 pattern-dots-md"></div>
+<i class="ph-duotone ph-hamburger text-6xl text-accent group-hover:text-white group-hover:scale-110 transition-all duration-500"></i>
+</div>
+<div class="p-8">
+<h4 class="text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">MunchBox</h4>
+<p class="text-slate-400 text-sm mb-6 leading-relaxed">Fast food delivery site with menu browsing, cart management, and checkout for takeaway and delivery orders.</p>
+<div class="flex items-center justify-between">
+<div class="flex gap-2">
+<span class="text-xs font-mono py-1 px-2 rounded bg-white/5 text-slate-400">HTML</span>
+<span class="text-xs font-mono py-1 px-2 rounded bg-white/5 text-slate-400">CSS</span>
+<span class="text-xs font-mono py-1 px-2 rounded bg-white/5 text-slate-400">JS</span>
+</div>
+<a href="https://muazasghar.github.io/MunchBox/public/index.html" class="text-sm font-semibold text-white flex items-center gap-1 hover:gap-2 transition-all">
+View Project <i class="ph-bold ph-arrow-right"></i>
+</a>
+</div>
+</div>
+</article>
+
+<!-- Project Card: Twin City Metro -->
 <article class="group relative bg-[#131B2C] border border-white/5 rounded-2xl overflow-hidden hover:border-accent/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl fade-in-section">
 <div class="h-48 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 group-hover:from-cyan-500/30 group-hover:to-blue-500/30 transition-all flex items-center justify-center relative overflow-hidden">
 <div class="absolute inset-0 opacity-30 pattern-lines-lg"></div>
@@ -200,6 +225,49 @@ My work is driven by a desire to create high-quality digital experiences that le
 <span class="text-xs font-mono py-1 px-2 rounded bg-white/5 text-slate-400">JS</span>
 </div>
 <a href="https://muazasghar.github.io/twinCityMetro/" class="text-sm font-semibold text-white flex items-center gap-1 hover:gap-2 transition-all">
+View Project <i class="ph-bold ph-arrow-right"></i>
+</a>
+</div>
+</div>
+</article>
+
+<!-- Project Card 3: Colour Palette -->
+<article class="group relative bg-[#131B2C] border border-white/5 rounded-2xl overflow-hidden hover:border-accent/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl fade-in-section" style="transition-delay: 100ms;">
+<div class="h-48 bg-gradient-to-br from-fuchsia-500/20 to-violet-500/20 group-hover:from-fuchsia-500/30 group-hover:to-violet-500/30 transition-all flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-30 pattern-dots-md"></div>
+<i class="ph-duotone ph-palette text-6xl text-accent group-hover:text-white group-hover:scale-110 transition-all duration-500"></i>
+</div>
+<div class="p-8">
+<h4 class="text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">Colour Palette</h4>
+<p class="text-slate-400 text-sm mb-6 leading-relaxed">Builds a colour palette from an image, making it easy to explore and capture its key colours.</p>
+<div class="flex items-center justify-between">
+<div class="flex gap-2">
+<span class="text-xs font-mono py-1 px-2 rounded bg-white/5 text-slate-400">HTML</span>
+<span class="text-xs font-mono py-1 px-2 rounded bg-white/5 text-slate-400">CSS</span>
+<span class="text-xs font-mono py-1 px-2 rounded bg-white/5 text-slate-400">JS</span>
+</div>
+<a href="https://muazasghar.github.io/ColourPalette/" class="text-sm font-semibold text-white flex items-center gap-1 hover:gap-2 transition-all" target="_blank" rel="noopener noreferrer">
+View Project <i class="ph-bold ph-arrow-right"></i>
+</a>
+</div>
+</div>
+</article>
+
+<!-- Project Card 4: Currency Converter -->
+<article class="group relative bg-[#131B2C] border border-white/5 rounded-2xl overflow-hidden hover:border-accent/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl fade-in-section" style="transition-delay: 200ms;">
+<div class="h-48 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 group-hover:from-emerald-500/30 group-hover:to-teal-500/30 transition-all flex items-center justify-center relative overflow-hidden">
+<div class="absolute inset-0 opacity-30 pattern-cross-sm"></div>
+<i class="ph-duotone ph-currency-dollar text-6xl text-accent group-hover:text-white group-hover:scale-110 transition-all duration-500"></i>
+</div>
+<div class="p-8">
+<h4 class="text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">Currency Converter</h4>
+<p class="text-slate-400 text-sm mb-6 leading-relaxed">A real-time currency conversion tool built with modern JavaScript. Features live exchange rates, easy input, and responsive UI.</p>
+<div class="flex items-center justify-between">
+<div class="flex gap-2">
+<span class="text-xs font-mono py-1 px-2 rounded bg-white/5 text-slate-400">API</span>
+<span class="text-xs font-mono py-1 px-2 rounded bg-white/5 text-slate-400">JS</span>
+</div>
+<a href="https://muazasghar.github.io/CurrencyConverter/" class="text-sm font-semibold text-white flex items-center gap-1 hover:gap-2 transition-all">
 View Project <i class="ph-bold ph-arrow-right"></i>
 </a>
 </div>
@@ -291,27 +359,6 @@ View Project <i class="ph-bold ph-arrow-right"></i>
 </div>
 </article>
 
-<!-- Project Card 5 -->
-<article class="group relative bg-[#131B2C] border border-white/5 rounded-2xl overflow-hidden hover:border-accent/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl fade-in-section" style="transition-delay: 100ms;">
-<div class="h-48 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 group-hover:from-emerald-500/30 group-hover:to-teal-500/30 transition-all flex items-center justify-center relative overflow-hidden">
-<div class="absolute inset-0 opacity-30 pattern-cross-sm"></div>
-<i class="ph-duotone ph-currency-dollar text-6xl text-accent group-hover:text-white group-hover:scale-110 transition-all duration-500"></i>
-</div>
-<div class="p-8">
-<h4 class="text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">Currency Converter</h4>
-<p class="text-slate-400 text-sm mb-6 leading-relaxed">A real-time currency conversion tool built with modern JavaScript. Features live exchange rates, easy input, and responsive UI.</p>
-<div class="flex items-center justify-between">
-<div class="flex gap-2">
-<span class="text-xs font-mono py-1 px-2 rounded bg-white/5 text-slate-400">API</span>
-<span class="text-xs font-mono py-1 px-2 rounded bg-white/5 text-slate-400">JS</span>
-</div>
-<a href="https://muazasghar.github.io/CurrencyConverter/" class="text-sm font-semibold text-white flex items-center gap-1 hover:gap-2 transition-all">
-View Project <i class="ph-bold ph-arrow-right"></i>
-</a>
-</div>
-</div>
-</article>
-
 <!-- Project Card 6 -->
 <article class="group relative bg-[#131B2C] border border-white/5 rounded-2xl overflow-hidden hover:border-accent/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl fade-in-section" style="transition-delay: 100ms;">
 <div class="h-48 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 group-hover:from-cyan-500/30 group-hover:to-blue-500/30 transition-all flex items-center justify-center relative overflow-hidden">
@@ -374,28 +421,6 @@ View Project <i class="ph-bold ph-arrow-right"></i>
 </div>
 </div>
 </article>
-
-<!-- Project Card 8 -->
-<article class="group relative bg-[#131B2C] border border-white/5 rounded-2xl overflow-hidden hover:border-accent/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl fade-in-section" style="transition-delay: 100ms;">
-<div class="h-48 bg-gradient-to-br from-amber-500/20 to-orange-500/20 group-hover:from-amber-500/30 group-hover:to-orange-500/30 transition-all flex items-center justify-center relative overflow-hidden">
-<div class="absolute inset-0 opacity-30 pattern-dots-md"></div>
-<i class="ph-duotone ph-hamburger text-6xl text-accent group-hover:text-white group-hover:scale-110 transition-all duration-500"></i>
-</div>
-<div class="p-8">
-<h4 class="text-xl font-bold text-white mb-2 group-hover:text-accent transition-colors">MunchBox</h4>
-<p class="text-slate-400 text-sm mb-6 leading-relaxed">Fast food delivery site with menu browsing, cart management, and checkout for takeaway and delivery orders.</p>
-<div class="flex items-center justify-between">
-<div class="flex gap-2">
-<span class="text-xs font-mono py-1 px-2 rounded bg-white/5 text-slate-400">HTML</span>
-<span class="text-xs font-mono py-1 px-2 rounded bg-white/5 text-slate-400">CSS</span>
-<span class="text-xs font-mono py-1 px-2 rounded bg-white/5 text-slate-400">JS</span>
-</div>
-<a href="https://muazasghar.github.io/MunchBox/public/index.html" class="text-sm font-semibold text-white flex items-center gap-1 hover:gap-2 transition-all">
-View Project <i class="ph-bold ph-arrow-right"></i>
-</a>
-</div>
-</div>
-</article>
 </div>
 </div>
 </section>
@@ -442,6 +467,6 @@ Designed & Built with <span class="text-accent">♥️</span> by Muaz
 </div>
 </footer>
 
-<script src="script.js"></script>
+<script src="script.js" defer></script>
 </body>
 </html>

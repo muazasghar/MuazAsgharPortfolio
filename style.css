@@ -84,7 +84,7 @@ padding: 0;
 
 html {
 font-family: var(--font-sans);
-scroll-behavior: smooth;
+scroll-behavior: auto;
 background-color: var(--bg-primary);
 color: var(--text-main);
 overflow-x: hidden;
@@ -99,11 +99,10 @@ background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.15), transp
             var(--bg-primary);
 position: relative;
 overflow-x: hidden;
-animation: bgShift 18s ease-in-out infinite alternate;
 }
 
 .bg-glow-layer {
-  position: fixed;
+  position: absolute;
   inset: 0;
   z-index: 0;
   pointer-events: none;
@@ -120,10 +119,11 @@ footer {
 .bg-orb {
   position: absolute;
   border-radius: 999px;
-  filter: blur(120px);
-  opacity: 0.9;
-  mix-blend-mode: screen;
+  filter: blur(80px);
+  opacity: 0.85;
   animation: floatOrb 18s ease-in-out infinite alternate;
+  contain: strict;
+  transform: translate3d(0, 0, 0);
 }
 
 .orb-one {
@@ -164,7 +164,7 @@ footer {
   }
 }
 
-@keyframes bgShift {
+@keyframes heroTextShift {
   0% {
     background-position: 0% 50%;
   }
@@ -173,19 +173,9 @@ footer {
   }
 }
 
-@keyframes heroTextShift {
-  0% {
-    background-position: 0% 50%;
-    filter: brightness(1);
-  }
-  50% {
-    background-position: 50% 50%;
-    filter: brightness(1.08);
-  }
-  100% {
-    background-position: 100% 50%;
-    filter: brightness(1.12);
-  }
+html.is-scrolling .bg-orb,
+html.is-scrolling .hero-title .block {
+  animation-play-state: paused;
 }
 
 a {
@@ -253,13 +243,11 @@ display: block;
 
 .hero-stats-card {
   position: relative;
-  background: rgba(12, 18, 31, 0.82);
+  background: rgba(12, 18, 31, 0.94);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 26px;
   padding: 1rem 1rem 1.1rem;
   box-shadow: 0 24px 60px rgba(2, 6, 23, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.06);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
   max-width: 360px;
   width: 100%;
   margin-left: auto;
@@ -635,11 +623,9 @@ display: block;
   gap: 0.7rem;
   padding: 0.45rem 0.8rem 0.45rem 0.45rem;
   border-radius: 16px;
-  background: rgba(15, 23, 42, 0.8);
+  background: rgba(15, 23, 42, 0.92);
   border: 1px solid rgba(148, 163, 184, 0.18);
   box-shadow: 0 12px 28px rgba(2, 6, 23, 0.28);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
   z-index: 70;
   color: rgba(255, 255, 255, 0.95);
 }
@@ -1098,11 +1084,10 @@ color: var(--text-selection);
 .group:hover .group-hover\:text-accent { color: var(--accent); }
 .group:hover .group-hover\:scale-110 { transform: scale(1.1); }
 
-/* Navigation Blur Effect */
+/* Navigation scroll state */
 .nav-scrolled {
-background-color: rgba(11, 15, 25, 0.8);
-backdrop-filter: blur(12px);
-border-bottom-color: rgba(255, 255, 255, 0.05);
+background-color: rgba(11, 15, 25, 0.92);
+border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 /* Animations */
@@ -1128,12 +1113,28 @@ to { opacity: 1; transform: translateY(0); }
 /* Fade In Section Observer */
 .fade-in-section {
 opacity: 0;
-transform: translateY(30px);
-transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+transition: opacity 0.4s ease-out;
 }
 .fade-in-section.is-visible {
 opacity: 1;
-transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .bg-orb,
+  .hero-title .block,
+  .animate-fade-up {
+    animation: none !important;
+  }
+
+  .fade-in-section {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }
 
 /* Pattern Generators (CSS only) */

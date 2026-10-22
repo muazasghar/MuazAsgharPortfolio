@@ -15,35 +15,39 @@ document.addEventListener('DOMContentLoaded', () => {
   const menu = document.getElementById('mobile-menu');
   const icon = document.getElementById('menu-icon');
 
-  // --- Navbar Scroll Effect ---
+  // --- Scroll: navbar state + pause heavy animations while scrolling ---
   let ticking = false;
+  let scrollEndTimer = null;
+  const root = document.documentElement;
 
-  function updateNavbarState() {
-    if (!navbar) return;
-
-    if (window.scrollY > 20) {
-      navbar.classList.add('nav-scrolled');
-    } else {
-      navbar.classList.remove('nav-scrolled');
+  function updateScrollState() {
+    if (navbar) {
+      if (window.scrollY > 20) {
+        navbar.classList.add('nav-scrolled');
+      } else {
+        navbar.classList.remove('nav-scrolled');
+      }
     }
+
+    root.classList.add('is-scrolling');
+    clearTimeout(scrollEndTimer);
+    scrollEndTimer = setTimeout(() => {
+      root.classList.remove('is-scrolling');
+    }, 120);
 
     ticking = false;
   }
 
+  updateScrollState();
+
   window.addEventListener('scroll', () => {
     if (!ticking) {
-      requestAnimationFrame(updateNavbarState);
+      requestAnimationFrame(updateScrollState);
       ticking = true;
     }
   }, { passive: true });
 
   // --- Intersection Observer for Fade-in Animations ---
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.12
-  };
-
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -51,7 +55,11 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.unobserve(entry.target);
       }
     });
-  }, observerOptions);
+  }, {
+    root: null,
+    rootMargin: '0px 0px -5% 0px',
+    threshold: 0.08
+  });
 
   document.querySelectorAll('.fade-in-section').forEach((el) => observer.observe(el));
 
